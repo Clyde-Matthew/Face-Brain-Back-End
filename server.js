@@ -8,13 +8,14 @@ const register = require("./controllers/register");
 const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
+const port = process.env.PORT || 3000;
 
 
 const db = require('knex')({
   client: 'pg',
   connection: {
     host : '127.0.0.1',
-    port : 5432,
+    port : port,
     user : 'postgres',
     password : '4q2buddy',
     database : 'face-brain'
