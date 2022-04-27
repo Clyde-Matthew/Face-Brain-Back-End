@@ -8,16 +8,17 @@ const register = require("./controllers/register");
 const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
-const port = process.env.PORT || 3000;
 
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 const db = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : '4q2buddy',
-    database : 'face-brain'
+    connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
   }
 });
 
@@ -31,7 +32,7 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get("/", (req, res) => {
+app.get("/", (res) => {
   res.send('its working');
 });
 
