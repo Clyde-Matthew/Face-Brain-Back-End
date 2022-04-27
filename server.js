@@ -15,7 +15,6 @@ const db = require('knex')({
   client: 'pg',
   connection: {
     host : '127.0.0.1',
-    port : port,
     user : 'postgres',
     password : '4q2buddy',
     database : 'face-brain'
