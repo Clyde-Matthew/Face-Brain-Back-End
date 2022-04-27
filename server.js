@@ -32,7 +32,7 @@ app.use(cors());
 
 
 app.get("/", (req, res) => {
-  res.send('success');
+  res.send('its working');
 });
 
 app.post("/signin", (req, res) => {signin.handleSignin(req, res, db, bcrypt)});
@@ -45,7 +45,7 @@ app.put("/image", (req,res) => {image.handleImage(req,res,db)})
 
 app.post("/imageurl", (req,res) => {image.handleApiCall(req,res)})
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
 

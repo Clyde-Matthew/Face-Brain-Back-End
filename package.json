@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "enging":{
+    "node": "16.X",
+    "npm": "8.X"
+  },  
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon server.js"
